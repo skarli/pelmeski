@@ -5,7 +5,7 @@ namespace App\Providers;
 use App\Modifiers\ShippingModifier;
 use Illuminate\Support\ServiceProvider;
 use Lunar\Base\ShippingModifiers;
-use Illuminate\Support\Facades\Schema;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -25,8 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(ShippingModifiers $shippingModifiers)
     {
-        Schema::defaultStringLength(191);
-
         $shippingModifiers->add(
             ShippingModifier::class
         );
