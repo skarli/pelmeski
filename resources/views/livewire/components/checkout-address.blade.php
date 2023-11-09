@@ -27,7 +27,7 @@
                 </x-input.group>
             </div>
 
-            <div>
+            <div class="hidden">
                 <x-input.group label="Company name"
                                :errors="$errors->get('address.company_name')"
                                required>

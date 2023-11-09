@@ -10,6 +10,7 @@ use Lunar\Facades\ShippingManifest;
 use Lunar\Models\Cart;
 use Lunar\Models\CartAddress;
 use Lunar\Models\Country;
+use Lunar\Models\State;
 
 class CheckoutPage extends Component
 {
@@ -224,6 +225,8 @@ class CheckoutPage extends Component
             $this->getAddressValidation($type)
         );
 
+
+   
         $address = $this->{$type};
 
         if ($type == 'billing') {
@@ -293,8 +296,19 @@ class CheckoutPage extends Component
      */
     public function getCountriesProperty()
     {
-        return Country::whereIn('iso3', ['GBR', 'USA'])->get();
+        return Country::get();
     }
+
+        /**
+     * Return the available countries.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function getStatesProperty()
+    {
+        return State::get();
+    }
+
 
     /**
      * Return available shipping options.
@@ -320,16 +334,16 @@ class CheckoutPage extends Component
             "{$type}.first_name" => 'required',
             "{$type}.last_name" => 'required',
             "{$type}.line_one" => 'required',
-            "{$type}.country_id" => 'required',
-            "{$type}.city" => 'required',
-            "{$type}.postcode" => 'required',
+            "{$type}.country_id" => 'nullable',
+            "{$type}.city" => 'nullable',
+            "{$type}.postcode" => 'nullable',
             "{$type}.company_name" => 'nullable',
             "{$type}.line_two" => 'nullable',
             "{$type}.line_three" => 'nullable',
             "{$type}.state" => 'nullable',
             "{$type}.delivery_instructions" => 'nullable',
-            "{$type}.contact_email" => 'required|email',
-            "{$type}.contact_phone" => 'nullable',
+            "{$type}.contact_email" => 'nullable',
+            "{$type}.contact_phone" => 'required',
         ];
     }
 
