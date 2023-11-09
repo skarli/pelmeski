@@ -21,3 +21,40 @@
         </svg>
     </button>
 </form>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var languageSelect = document.querySelector('select[name="language"]');
+
+        languageSelect.addEventListener('change', function() {
+            var chosenLanguage = this.value;
+            var currentUrl = window.location.href;
+            var host = window.location.host;
+            var protocol = window.location.protocol;
+
+            // Mevcut host'u noktalara göre ayır.
+            var hostParts = host.split('.');
+
+            // Eğer mevcut host zaten bir subdomain içeriyorsa (örneğin tr.example.com),
+            // bu subdomain'i seçilen dil ile değiştir.
+            if (hostParts.length > 2) {
+                hostParts[0] = chosenLanguage; // Subdomain'i değiştir
+            } else {
+                hostParts.unshift(chosenLanguage); // Subdomain ekle
+            }
+
+            // Yeni URL'i oluştur.
+            var newUrl = protocol + '//' + hostParts.join('.') + window.location.pathname + window.location.search;
+
+            // Yeni URL'e yönlendir.
+            window.location.href = newUrl;
+        });
+    });
+</script>
+<form action="" method="POST">
+    @csrf {{-- CSRF token eklemeyi unutmayın --}}
+    <select name="language" onchange="this.form.submit()">
+        <option value="tr" {{ app()->getLocale() == 'tr' ? 'selected' : '' }}>Türkçe</option>
+        <option value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>English</option>
+        <option value="ru" {{ app()->getLocale() == 'ru' ? 'selected' : '' }}>Русский</option>
+    </select>
+</form>
