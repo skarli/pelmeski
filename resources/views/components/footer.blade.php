@@ -8,7 +8,7 @@
         </p>
 
         <p class="pt-4 mt-4 text-sm text-gray-500 border-t border-gray-100">
-            &copy; {{ now()->year }} Company Name
+            &copy; {{ now()->year }} Pelmeski Homemade Fethiye
         </p>
     </div>
 </footer>
