@@ -29,13 +29,52 @@
     <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
         <x-brand.logo class="w-auto h-8 text-indigo-600" />
 
-        <p class="max-w-sm mt-4 text-gray-700">
-            This is an example of a classic e-commerce store built with Lunar.
-            We are currently making a screencast series to show you how we did it!
-        </p>
 
+        <form action="" method="POST">
+            @csrf {{-- CSRF token eklemeyi unutmayın --}}
+            <select name="language" onchange="this.form.submit()">
+                <option value="tr" {{ app()->getLocale() == 'tr' ? 'selected' : '' }}>Türkçe</option>
+                <option value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>English</option>
+                <option value="ru" {{ app()->getLocale() == 'ru' ? 'selected' : '' }}>Русский</option>
+            </select>
+        </form>
         <p class="pt-4 mt-4 text-sm text-gray-500 border-t border-gray-100">
             &copy; {{ now()->year }} Pelmeski Homemade Fethiye
         </p>
     </div>
+    
 </footer>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var languageSelect = document.querySelector('select[name="language"]');
+
+        languageSelect.addEventListener('change', function() {
+            var chosenLanguage = this.value;
+            var protocol = window.location.protocol;
+
+            // Seçilen dile göre subdomaini belirle.
+            var subdomain;
+            switch (chosenLanguage) {
+                case 'tr':
+                    subdomain = 'tr.pelmeski.com.tr';
+                    break;
+                case 'en':
+                    subdomain = 'en.pelmeski.com.tr';
+                    break;
+                case 'ru':
+                    subdomain = 'ru.pelmeski.com.tr';
+                    break;
+                default:
+                    subdomain = 'pelmeski.com.tr';
+            }
+
+            // Yeni URL'i oluştur.
+            var newUrl = protocol + '//' + subdomain + window.location.pathname + window.location.search;
+
+            // Yeni URL'e yönlendir.
+            window.location.href = newUrl;
+        });
+    });
+</script>
+
