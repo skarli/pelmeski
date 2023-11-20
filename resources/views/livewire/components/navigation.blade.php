@@ -8,6 +8,7 @@
     width: 100%!important;
 }    
 }
+
 </style>
 
 <header class="relative border-b border-gray-100 " >
