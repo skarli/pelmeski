@@ -1,9 +1,19 @@
-
+<style>
+    html,body{
+        overflow-x:hidden;
+    }
+    @media (max-width:680px){
+.header-logo svg{
+    max-width:124px!important;
+    width: 100%!important;
+}    
+}
+</style>
 
 <header class="relative border-b border-gray-100 " >
     <div class="flex items-center justify-between h-16 px-4 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
         <div class="flex items-center">
-            <a class="flex items-center flex-shrink-0"
+            <a class="flex items-center flex-shrink-0 header-logo"
                href="{{ url('/') }}">
                 <span class="sr-only">Home</span>
 
@@ -28,7 +38,7 @@
 
                 <div x-data="{ mobileMenu: false }">
                     <button x-on:click="mobileMenu = !mobileMenu"
-                            class="grid flex-shrink-0 w-16 h-16 border-l border-gray-100 lg:hidden">
+                            class="grid flex-shrink-0  border-l border-gray-100 lg:hidden" style="width: 3rem;height: 3rem;">
                         <span class="sr-only">Toggle Menu</span>
 
                         <span class="place-self-center">

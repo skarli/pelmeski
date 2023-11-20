@@ -2,7 +2,7 @@
      x-data="{
          linesVisible: @entangle('linesVisible')
      }">
-    <button class="grid w-16 h-16 transition border-l border-gray-100 lg:border-l-transparent hover:opacity-75"
+    <button class="grid  transition border-l border-gray-100 lg:border-l-transparent hover:opacity-75" style="width: 3rem;height: 3rem;"
             x-on:click="linesVisible = !linesVisible">
         <span class="sr-only">Cart</span>
 
