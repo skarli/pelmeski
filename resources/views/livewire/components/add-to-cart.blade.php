@@ -3,7 +3,7 @@
         <div>
             <label for="quantity"
                    class="sr-only">
-                Quantity
+                   @lang('general.quantiy')
             </label>
 
             <input class="w-16 px-1 py-4 text-sm text-center transition border border-gray-100 rounded-lg no-spinner"
@@ -17,7 +17,7 @@
         <button type="submit"
                 class="w-full px-6 py-4 text-sm font-medium text-center text-white bg-indigo-600 rounded-lg hover:bg-indigo-700"
                 wire:click.prevent="addToCart">
-            Add to Cart
+                @lang('general.sub')
         </button>
     </div>
 

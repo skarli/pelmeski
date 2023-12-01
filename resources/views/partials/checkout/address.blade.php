@@ -115,17 +115,21 @@
                     </x-input.group>
 
        
-        
+                    @lang('general.test')
                 
 
 
+             
+          
 
-<h1>Muğla/Fethiye Bölgesinde Hizmet Vermekteyiz.</h1>
-<x-input.group class="col-span-3 sm:col-span-2"
-label="Mahalle Seçiniz"
+                </br>
+<x-input.group class="col-span-6 sm:col-span-3 " 
+label="Muğla/Fethiye Bölgesinde Hizmet Vermekteyiz."
 required
 >
-<select class="w-full p-3 border border-gray-200 rounded-lg sm:text-sm"
+
+
+<select class="border border-gray-200 rounded-lg sm:text-sm"
 required
 wire:model.defer="{{ $type }}.line_two">
 <option value>Mahalle Seçiniz</option>
@@ -175,9 +179,11 @@ wire:model.defer="{{ $type }}.line_two">
 </select>
 </x-input.group>
 
+</br>
 
-<x-input.group class="col-span-3 "
+<x-input.group  
 label="Address line 1"
+class="col-span-6 sm:col-span-3 " 
 :errors="$errors->get($type . '.line_one')"
 required>
 <x-input.text wire:model.defer="{{ $type }}.line_one"
