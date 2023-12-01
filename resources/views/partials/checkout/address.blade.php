@@ -115,7 +115,6 @@
                     </x-input.group>
 
        
-                    @lang('general.test')
                 
 
 
