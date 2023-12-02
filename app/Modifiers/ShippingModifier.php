@@ -19,8 +19,8 @@ class ShippingModifier
 
         ShippingManifest::addOption(
             new ShippingOption(
-                name: 'Free',
-                description: 'Free',
+                name: __('general.free') ,
+                description: __('general.free'),
                 identifier: 'EXPDEL',
                 price: new Price(0, $cart->currency, 1),
                 taxClass: $taxClass

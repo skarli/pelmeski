@@ -17,5 +17,37 @@ return [
     'add' => 'Sepete Ekle',
     'quantity' => 'Adet',
     'sub' => 'Genel Toplam',
+    'empty'=> 'Sepetinizde Ürün Yok',
+    'update'=> 'Sepeti Güncelle',
+    'continue'=> 'Alışverişe Devam Et',
+    'checkout'=> 'Alışverişi Tamamla',
+    'shipping'=> 'Teslimat Bilgileri',
+    'bill'=> 'Fatura Bilgilerim Aynı ',
+    'edit' => 'Düzenle',
+    'first' => 'İsminiz',
+    'last' => 'Soyisminiz',
+    'phone' => 'Telefon',
+    'address'=> 'Adres',
+    'mahalle' =>"Mahalle Seçiniz",
+    'not' => "Muğla/Fethiye Bölgesinde Hizmet Vermekteyiz.",
+    'saveadress'=>"Teslimat Bilgileri Kaydet",
+    'saving'=>"Kaydediliyor..",
+    'options'=>"Teslimat Seçenekleri",
+    'free' => "Ücretsiz Teslimat",
+    'tamamla' => "İlerle",
+    'payment' =>"Ödeme Yöntemi",
+    'cash' =>"Kapıda Ödeme",
+    'submit' =>"Siparişi Tamamla",
+    'payinfo' => "Teslimat Esnasında Kredi Kartı/Havale veya Nakit Ödeyebilirsiniz.",
+    'summary' => "Sipariş Özeti ",
+    'total' =>"Toplam Ödeme",
+    'order'=> "Siparişiniz Başarıyla Alındı",
+    'ordernumber'=>"Sipariş Numaranız:",
+    'back'=>"Anasayfa Dön",
+
+
+
+
+
 
 ];

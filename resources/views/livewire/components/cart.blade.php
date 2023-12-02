@@ -103,13 +103,14 @@
                     </div>
                 @else
                     <p class="py-4 text-sm font-medium text-center text-gray-500">
-                        Your cart is empty
+                       @lang('general.empty')
                     </p>
                 @endif
 
                 <dl class="flex flex-wrap pt-4 mt-6 text-sm border-t border-gray-100">
                     <dt class="w-1/2 font-medium">
-                        Sub Total
+                        @lang('general.sub')
+
                     </dt>
 
                     <dd class="w-1/2 text-right">
@@ -118,7 +119,7 @@
                 </dl>
             @else
                 <p class="py-4 text-sm font-medium text-center text-gray-500">
-                    Your cart is empty
+                    @lang('general.empty')
                 </p>
             @endif
         </div>
@@ -128,17 +129,20 @@
                 <button class="block w-full p-3 text-sm font-medium text-blue-800 border border-blue-600 rounded-lg hover:ring-1 hover:ring-blue-600"
                         type="button"
                         wire:click="updateLines">
-                    Update Cart
+               
+                    @lang('general.update')
                 </button>
 
                 <a class="block w-full p-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-500"
                    href="{{ route('checkout.view') }}">
-                    Checkout
+           
+                    @lang('general.checkout')
                 </a>
 
                 <a class="inline-block text-sm font-medium text-gray-600 underline hover:text-gray-500"
                    href="{{ url('/') }}">
-                    Continue Shopping
+                 
+                    @lang('general.continue')
                 </a>
             </div>
         @endif

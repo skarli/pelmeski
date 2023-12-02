@@ -21,7 +21,7 @@
       class="bg-white border border-gray-100 rounded-xl">
     <div class="flex items-center justify-between h-16 px-6 border-b border-gray-100">
         <h3 class="text-lg font-medium">
-            {{ ucfirst($type) }} Details
+        @lang('general.shipping')
         </h3>
 
         @if ($type == 'shipping' && $step == $currentStep)
@@ -32,7 +32,7 @@
                        wire:model.defer="shippingIsBilling" />
 
                 <span class="ml-2 text-xs font-medium">
-                    Same as billing
+                    @lang('general.bill')
                 </span>
             </label>
         @endif
@@ -41,7 +41,7 @@
             <button class="px-5 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     type="button"
                     wire:click.prevent="$set('currentStep', {{ $step }})">
-                Edit
+               @lang('general.edit')
             </button>
         @endif
     </div>
@@ -51,7 +51,7 @@
             @if ($step == $currentStep)
                 <div class="grid grid-cols-6 gap-4">
                     <x-input.group class="col-span-3"
-                                   label="First name"
+                                   label="{{ __('general.first') }}"
                                    :errors="$errors->get($type . '.first_name')"
                                    required>
                         <x-input.text wire:model.defer="{{ $type }}.first_name"
@@ -59,7 +59,7 @@
                     </x-input.group>
 
                     <x-input.group class="col-span-3"
-                                   label="Last name"
+                                   label="{{ __('general.last') }}"
                                    :errors="$errors->get($type . '.last_name')"
                                    required>
                         <x-input.text wire:model.defer="{{ $type }}.last_name"
@@ -73,7 +73,7 @@
                     </x-input.group>
 
                     <x-input.group class="col-span-6 sm:col-span-3"
-                                   label="Contact phone"
+                                   label="{{ __('general.phone') }}"
                                    :errors="$errors->get($type . '.contact_phone')">
                         <x-input.text wire:model.defer="{{ $type }}.contact_phone" />
                     </x-input.group>
@@ -95,7 +95,7 @@
                 
 
                     <x-input.group class="col-span-3 sm:col-span-2 hidden"
-                                   label="Address line 3"
+                                   label="{{ __('general.address') }}"
                                    :errors="$errors->get($type . '.line_three')">
                     </x-input.group>
 
@@ -123,7 +123,7 @@
 
                 </br>
 <x-input.group class="col-span-6 sm:col-span-3 " 
-label="Muğla/Fethiye Bölgesinde Hizmet Vermekteyiz."
+label="{{ __('general.not') }}"
 required
 >
 
@@ -131,7 +131,7 @@ required
 <select class="border border-gray-200 rounded-lg sm:text-sm"
 required
 wire:model.defer="{{ $type }}.line_two">
-<option value>Mahalle Seçiniz</option>
+<option value>{{ __('general.mahalle') }}</option>
 <option value="Akarca Mah">Akarca Mah</option>
 <option value="Babataşı Mah">Babataşı Mah</option>
 <option value="Bozyer Mah">Bozyer Mah</option>
@@ -181,7 +181,7 @@ wire:model.defer="{{ $type }}.line_two">
 </br>
 
 <x-input.group  
-label="Address line 1"
+label="{{ __('general.address') }}"
 class="col-span-6 sm:col-span-3 " 
 :errors="$errors->get($type . '.line_one')"
 required>
@@ -197,7 +197,7 @@ required>
                         <div class="space-y-4">
                             <div>
                                 <dt class="font-medium">
-                                    Name
+                                    {{ __('general.first') }}
                                 </dt>
 
                                 <dd class="mt-0.5">
@@ -220,7 +220,7 @@ required>
                             @if ($this->{$type}->contact_phone)
                                 <div>
                                     <dt class="font-medium">
-                                        Phone Number
+                                        {{ __('general.phone') }}
                                     </dt>
 
                                     <dd class="mt-0.5">
@@ -243,7 +243,7 @@ required>
 
                     <div>
                         <dt class="font-medium">
-                            Address
+                            {{ __('general.address') }}
                         </dt>
 
                         <dd class="mt-0.5">
@@ -279,13 +279,13 @@ required>
                             wire:target="saveAddress">
                         <span wire:loading.remove
                               wire:target="saveAddress">
-                            Save Address
+                              {{ __('general.saveadress') }}
                         </span>
 
                         <span wire:loading
                               wire:target="saveAddress">
                             <span class="inline-flex items-center">
-                                Saving
+                                {{ __('general.saving') }}
 
                                 <x-icon.loading />
                             </span>

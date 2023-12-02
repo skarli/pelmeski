@@ -1,13 +1,13 @@
 <form wire:submit.prevent="save"
       class="border rounded shadow-lg">
     <div class="flex justify-between p-4 font-medium border-b">
-        <span class="text-xl">{{ ucfirst($type) }} Details</span>
+        <span class="text-xl">{{ ucfirst($type) }} @lang('general.shipping')</span>
         @if ($type == 'shipping' && $editing)
             <label class="text-sm">
                 <input type="checkbox"
                        value="1"
                        wire:model.defer="shippingIsBilling" />
-                Same as billing
+             @lang('general.bill')
             </label>
         @endif
     </div>
