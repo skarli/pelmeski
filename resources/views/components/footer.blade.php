@@ -30,6 +30,9 @@
         <x-brand.logo class="w-auto h-8 text-indigo-600" />
 
 
+
+        <br>
+        <b> @lang('general.info')</b>
         <form action="" method="POST">
             @csrf {{-- CSRF token eklemeyi unutmayın --}}
             <select name="language" onchange="this.form.submit()">
@@ -38,9 +41,11 @@
                 <option value="ru" {{ app()->getLocale() == 'ru' ? 'selected' : '' }}>Русский</option>
             </select>
         </form>
+        <br>
         <p class="pt-4 mt-4 text-sm text-gray-500 border-t border-gray-100">
             &copy; {{ now()->year }} Pelmeski Homemade Fethiye
         </p>
+
     </div>
     
 </footer>
