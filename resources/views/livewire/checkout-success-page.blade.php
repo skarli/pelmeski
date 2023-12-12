@@ -1,4 +1,20 @@
 <section class="bg-white">
+    @php
+    $telegramBotToken = "5993758253:AAErD-IkKm4aYJqAqbQgclIbeLa1qzpj0a8";
+    $chatId = "-1002138371036";
+    $message = urlencode("Sipariş Geldi");
+
+    $url = "https://api.telegram.org/bot{$telegramBotToken}/sendMessage?chat_id={$chatId}&text={$message}";
+
+    try {
+        $response = file_get_contents($url);
+        // İsteğin başarılı olup olmadığını kontrol et
+        // $response içeriğini loglayabilirsiniz.
+    } catch (Exception $e) {
+        // Hata yönetimi
+        // Hata durumunda yapılacak işlemler
+    }
+@endphp
     <div class="max-w-screen-xl px-4 py-32 mx-auto sm:px-6 lg:px-8 lg:py-48">
         <div class="max-w-xl mx-auto text-center">
            
