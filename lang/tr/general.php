@@ -44,7 +44,7 @@ return [
     'order'=> "Siparişiniz Başarıyla Alındı",
     'ordernumber'=>"Sipariş Numaranız:",
     'back'=>"Anasayfa Dön",
-    'info' =>"Çalışma Saatleri 10:00 - 22:00(Sadece Haftaiçi)",
+    'info' =>"Çalışma Saatleri 10:00 - 22:00 (Salı Günü İzinliyiz.)",
 
 
 

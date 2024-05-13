@@ -44,6 +44,6 @@ return [
     'order'=> "Your Order Has Been Successfully Received",
     'ordernumber'=> "Your Order Number:",
     'back'=> "Return to Homepage",
-    'info'=>"Working Hours 10:00 - 22:00 (Weekdays Only)",
+    'info'=>"Working Hours 10:00 - 22:00 (We are off on Tuesday.)",
 
 ];
