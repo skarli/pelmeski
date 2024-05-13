@@ -139,11 +139,7 @@
                     @lang('general.checkout')
                 </a>
 
-                <a class="inline-block text-sm font-medium text-gray-600 underline hover:text-gray-500"
-                   href="{{ url('/') }}">
-                 
-                    @lang('general.continue')
-                </a>
+     
             </div>
         @endif
     </div>
